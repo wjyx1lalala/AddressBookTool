@@ -6,8 +6,8 @@ IOS-10 以后,苹果加强用户隐私数据的保护
 您需要在info.plist文件配置 NSContactsUsageDescription 字段
 
 //获取通讯录联系人名字,电话,并过滤掉非正常的电话号码
+
 [[AddressBookTool shareTool] obtainAllTelIfNeedAskForAuthorized:YES withComplete:^(BOOL isAuthorized, NSArray *telArr) {
-        
         if (isAuthorized == NO) {
             UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100)];
             label.text = @"访问通讯录被拒绝了";
